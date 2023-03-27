@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      * {
+        padding: 0;
+        margin: 0;
+        border: 0;
+      }
+
+      body {
+        background-color: #f03333;
+        min-width: 100vw;
+        min-height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+      }
+
+      img {
+        position: absolute;
+        width: 40%;
+      }
+
+      .clock-div {
+        width: 40vw;
+        height: 100vh;
+        display: flex;
+        vertical-align: middle;
+        align-items: center;
+        justify-content: center;
+        transition: 1s;
+      }
+
+      .poem-div {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      p {
+        font-size: 30px;
+        font-family: sans-serif;
+        opacity: 0;
+        transition: 1s;
+      }
+
+      #minute {
+        animation-name: minuto-kf;
+        animation-duration: 60s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+      }
+
+      @keyframes minuto-kf {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      #hour {
+        animation-name: hora-kf;
+        animation-duration: 60s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+      }
+
+      @keyframes hora-kf {
+        0% {
+          transform: rotate(330deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .fade {
+        animation-name: fade;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fade {
+        0s {
+          opacity: 0;
+        }
+        1s {
+          opacity: 1;
+        }
+      }
+
+      .stanza {
+        opacity: 0;
+        transition: 1s;
+        display: none;
+      }
+    </style>
+    <script type="text/javascript">
+      function onBodyLoad() {
+        var st1 = document.getElementById('st1');
+        var st2 = document.getElementById('st2');
+        var st3 = document.getElementById('st3');
+        var st4 = document.getElementById('st4');
+        var st5 = document.getElementById('st5');
+        var i = -900;
+
+        setTimeout(() => {st1.style.display = "initial";}, (i += 900));
+        setTimeout(() => {st1.style.opacity = 1;}, (i += 100));
+        for(const child of st1.children) {
+          setTimeout(() => {child.style.opacity = 1}, (i += 3000));
+        }
+        setTimeout(() => {st1.style.opacity = 0;}, (i += 2000));
+        setTimeout(() => {st1.style.display = "none";}, (i += 1000));
+
+        setTimeout(() => {st2.style.display = "initial";}, (i += 900));
+        setTimeout(() => {st2.style.opacity = 1;}, (i += 100));
+        for(const child of st2.children) {
+          setTimeout(() => {child.style.opacity = 1}, (i += 3000));
+        }
+        setTimeout(() => {st2.style.opacity = 0;}, (i += 2000));
+        setTimeout(() => {st2.style.display = "none";}, (i += 1000));
+
+        setTimeout(() => {st3.style.display = "initial";}, (i += 900));
+        setTimeout(() => {st3.style.opacity = 1;}, (i += 100));
+        for(const child of st3.children) {
+          setTimeout(() => {child.style.opacity = 1}, (i += 3000));
+        }
+        setTimeout(() => {st3.style.opacity = 0;}, (i += 2000));
+        setTimeout(() => {st3.style.display = "none";}, (i += 1000));
+
+        setTimeout(() => {st4.style.display = "initial";}, (i += 900));
+        setTimeout(() => {st4.style.opacity = 1;}, (i += 100));
+        for(const child of st4.children) {
+          setTimeout(() => {child.style.opacity = 1}, (i += 3000));
+        }
+        setTimeout(() => {st4.style.opacity = 0;}, (i += 2000));
+        setTimeout(() => {st4.style.display = "none";}, (i += 1000));
+
+        setTimeout(() => {st5.style.display = "initial";}, (i += 900));
+        setTimeout(() => {st5.style.opacity = 1;}, (i += 100));
+        for(const child of st5.children) {
+          setTimeout(() => {child.style.opacity = 1}, (i += 3000));
+        }
+        setTimeout(() => {st5.style.opacity = 0;}, (i += 2000));
+        setTimeout(() => {st5.style.display = "none";}, (i += 1000));
+
+        var clock = document.querySelector('.clock-div');
+        setTimeout(() => {clock.style.width = "100vw";}, (i += 1000));
+      }
+    </script>
+  </head>
+  <body onload="onBodyLoad()">
+    <div class="clock-div">
+      <img id="clock" src="tempo.png" alt="Relógio">
+      <img id="minute" src="minuto.png" alt="Ponteiro do Minuto">
+      <img id="hour" src="hora.png" alt="Ponteiro da Hora">
+    </div>
+    <div class="poem-div">
+      <div id="st1" class="stanza">
+        <p>O tempo é o que resume a gente</p>
+        <p>Todo tempo contigo é insuficiente</p>
+      </div>
+      <div id="st2" class="stanza">
+        <p>Pra falar a verdade</p>
+      </div>
+      <div id="st3" class="stanza">
+        <p>O tempo contigo é diferente</p>
+        <p>Meu tempo com você te tenho nos braços</p>
+        <p>Meu tempo sem você te tenho na mente</p>
+      </div>
+      <div id="st4" class="stanza">
+        <p>Quanto tempo a gente esteve longe?</p>
+        <p>Isso pra mim é indiferente</p>
+        <p>Pois o tempo nunca foi eterno</p>
+        <p>E a distância nunca foi o suficiente</p>
+      </div>
+      <div id="st5" class="stanza">
+        <p>Pois como os ponteiros de um relógio</p>
+        <p>Mesmo que eles se afastem um do outro</p>
+        <p>Eu sei que alguma hora</p>
+        <p>Eles vão se encontrar novamente</p>
+      </div>
+    </div>
+  </body>
+  <!--
+  O tempo é o que resume a gente
+  Todo tempo contigo é insuficiente
+
+  Pra falar a verdade
+
+  O tempo contigo é diferente
+  Meu tempo com você te tenho nos braços
+  Meu tempo sem você te tenho na mente
+
+  Quanto tempo a gente esteve longe?
+  Eu não sei
+  Mas o tempo nunca foi eterno
+  E a distância nunca foi o suficiente
+
+  Pois como os ponteiros de um relógio
+  Mesmo que eles se afastem um do outro
+  Eu sei que alguma hora
+  Eles vão se encontrar novamente
+  -->
+</html>
