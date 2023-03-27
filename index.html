@@ -10,7 +10,7 @@ Meu tempo sem você te tenho na mente
 
 Quanto tempo a gente esteve longe?
 Isso pra mim é indiferente
-Mas o tempo nunca foi eterno
+Pois o tempo nunca foi eterno
 E a distância nunca foi o suficiente
 
 Pois como os ponteiros de um relógio
@@ -139,13 +139,13 @@ Eles vão se encontrar novamente
       }
 
       function createFade(div, time) {
-        setTimeout(() => {st1.style.display = "initial";}, (time += 900));
-        setTimeout(() => {st1.style.opacity = 1;}, (time += 100));
-        for(const child of st1.children) {
+        setTimeout(() => {div.style.display = "initial";}, (time += 900));
+        setTimeout(() => {div.style.opacity = 1;}, (time += 100));
+        for(const child of div.children) {
           setTimeout(() => {child.style.opacity = 1}, (time += 3000));
         }
-        setTimeout(() => {st1.style.opacity = 0;}, (time += 2000));
-        setTimeout(() => {st1.style.display = "none";}, (time += 1000));
+        setTimeout(() => {div.style.opacity = 0;}, (time += 2000));
+        setTimeout(() => {div.style.display = "none";}, (time += 1000));
         return time;
       }
     </script>
